@@ -1,44 +1,60 @@
-select * from products;
+------------------------------------------------------------------
+-- WARM UPS: Type the following commands to build muscle memory. --
+-------------------------------------------------------------------
 
-select * from users;
+-- 1. [Using max/min]:
+SELECT max(price) FROM products;
 
-select * from purchases;
+-- 2. [Using count]:
+ SELECT count(*) FROM users;
 
+-- 3. [Using sum]: 
+SELECT sum(price) FROM purchase_items;
+
+-- 4. [Using avg]: 
+SELECT avg(price) FROM purchase_items;
+
+--------------------------------------------------------
+-- EXERCISES: Answer using the techniques from above. --
+--------------------------------------------------------
+
+-- 1. Find the total number of purchases.
+select count(*) from purchases;
+
+-- 2. Find the average price of the items in the products table.
+select avg(price) from products;
+
+-- 3. Find the maximum price from the products that are NOT a
+--    computer.
+select max(price) from products where title not like '% Computer';
+
+-- 4. Find the number of users with Gmail email addresses.
+select count(*) from users
+where email like '%gmail%';
+
+-- 5. Using the purchase_items table, find the total dollar value of
+--    all items with state "Returned".
+select SUM(price) from purchase_items where status = 'Returned';
 select * from purchase_items;
 
+-- 6. Find the average price of all products containing the word
+--    "Book" in their title.
+select AVG(price) from products where title ilike '%Book';
 
--- 1. [Distinct values in column]: SELECT DISTINCT price FROM products;
+----------------------------------------
+-- EXTRA CREDIT: If you finish early. --
+----------------------------------------
 
- -- 2. [Filter using set of values]: SELECT * FROM products WHERE price IN (5.99, 9.99);
-
- -- 3. [Filter with wildcard]: SELECT * FROM products WHERE title LIKE '%Book%;
-
- -- 4. [Less-than filter and order by]: SELECT * FROM products WHERE price < 10 ORDER BY price DESC;
-
-
-
-
-
--- 1. Find how many distinct sets of tags there are in the products table.
-select * from products;
-select distinct tags from products;
+-- 1. You use multiple aggregation functions in one SELECT. Using
+--    only one query,
+--    find the min(), max() and avg() of the prices in the product
+--    table.
+select min(price), max(price), avg(price) from products;
 
 
- -- 2. Find all the rows of purchases made from either Virginia (VA) or Wisconsin (WI).
-select * from purchases;
-select * from purchases where state in ('VA', 'WI');
+-- 2. In one query, find the difference between the price of the most
+--    expensive and least expensive product.
+select max(price) - min(price) from products;
 
- -- 3. Find all the rows of the purchases made by people with the first name of "Johnathan".
-select * from purchases where name like 'Johnathan %';
 
- -- 4. How many purchases were made by people whose last name starts with an 'A'?
-select * from purchases where name like '% A%';
- -- 5. How many products cost between $10 and 30?
-select count(*) from products where 10 <= price and price <= 30;
 
- -- 6. What is the average price among Returned items, from the purchase_items table? 
- select * from purchase_items;
- select distinct status from purchase_items;
- select avg(price) from purchase_items where status = 'Returned';
- 
- 
