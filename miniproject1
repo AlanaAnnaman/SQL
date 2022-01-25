@@ -1,0 +1,58 @@
+--INSERT INTO videos (video_id, title, duration, URL)
+-- VALUES ('0', 'Orca Facts: the KILLER WHALE facts | Animal Fact Files', 5, 'https://www.youtube.com/watch?v=WYjSaU7ueqo');
+
+
+--SELECT *
+--FROM videos;
+
+ --INSERT INTO videos (video_id, title, duration, URL)
+--VALUES ('1', 'Life in the Universe. A Journey to Outer Space', 5, 'https://www.youtube.com/watch?v=tgMiV7yIk6U');
+
+--SELECT *
+--FROM videos;
+
+--INSERT INTO videos (video_id, title, duration, URL)
+--VALUES ('2', 'Our Planet | Frozen Worlds | FULL EPISODE | Netflix', 5, 'https://www.youtube.com/watch?v=cTQ3Ko9ZKg8');
+
+--SELECT *
+--FROM videos;
+
+
+
+--CREATE TABLE reviewers (
+	--video_id VARCHAR(100) NOT NULL,
+	--username VARCHAR(25) NOT NULL,
+	--rating NUMERIC(1),
+	--review VARCHAR(255) NOT NULL
+--);
+
+--SELECT *FROM reviewers;
+
+--INSERT INTO reviewers (video_id, username, rating, review)
+--VALUES ('0', 'ALANA', 5, 'Amazing movies');
+
+--SELECT *FROM reviewers;
+
+--INSERT INTO reviewers (video_id, username, rating, review)
+--VALUES ('1', 'NANCY', 4, 'boring movie');
+
+--SELECT *FROM reviewers;
+
+
+--INSERT INTO reviewers (video_id, username, rating, review)
+--VALUES ('0', 'STACY', 3, 'it was okay');
+
+--SELECT *FROM reviewers;
+
+--INSERT INTO reviewers (video_id, username, rating, review)
+--VALUES ('1', 'AMBER', 1, 'one star it was lame');
+--SELECT *FROM reviewers;
+
+
+--SELECT videos.video_id,videos.title,videos.duration, videos.URL,reviewers.video_id,reviewers.username,reviewers.rating,reviewers.review
+--FROM videos 
+--INNER JOIN reviewers
+--ON videos.video_id = reviewers.video_id;
+
+
+
